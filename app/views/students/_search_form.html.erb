@@ -1,0 +1,7 @@
+<%= form_with url: 'students/search', method: :get do |f|%>
+    <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </p>
+    <%= f.submit "Search" %>
+<% end %>

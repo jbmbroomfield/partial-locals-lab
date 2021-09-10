@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+
   def new
     @student = Student.new
   end
@@ -22,6 +23,12 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    if params.include? 'query'
+      @students = Student.search(params['query'])
+    else
+      @students = Student.all
+    end
+
   end
 
   def student_params
